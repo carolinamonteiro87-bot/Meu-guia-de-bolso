@@ -1,0 +1,50 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: monospace;
+}
+
+main{
+   background-color:#F7ADAD;
+   color: gray;
+   height: 85vh;
+   display: flex;
+   flex-direction: column;
+   margin-block: auto;
+   align-items: center;
+   gap: 15px;
+}
+hr {
+    height: 1px;
+    background: color #f19291;;
+    border: 1px;
+}
+
+.groupCommand {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-inline: 15px;
+    gap: 15px;
+}
+
+.cardCommand {
+    width: calc(25% - 20px);
+    border: 1px solid gray;
+    border-radius: 30px;
+    padding: 10px 15px;
+    transition: 0.3s;
+    background-color: #B1E5E6;
+}
+
+.cardCommand:hover {
+    background-color: #ffffff;
+    scale: 102.5%;
+    cursor: pointer;
+    color: #F7ADAD;
+    transform: translateY(-5%);
+}
