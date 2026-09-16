@@ -1,58 +1,130 @@
 * {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-h2,h1 {
-   text-align: center;
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fce8e8; /* Fundo geral claro em tom rosa suave */
+    color: #2b2b2b;
 }
 
-body {
-    background-image: url(assets/);
-    font-size: x-large;
-    font-family: monospace;
-    color: #F7ADAD;
-    background-repeat: repeat;
-    animation: rolagemPapel 20s linear infinite;
+header {
+    padding: 30px 15px 10px 15px;
+    text-align: center;
 }
- 
+
+h1 {
+    font-size: 2rem;
+    color: gray;
+    margin-bottom: 8px;
+}
+
+h2 {
+    font-size: 1.4rem;
+    color: #333333;
+    text-align: center;
+}
+
 main {
+    background-color: #F7ADAD; /* Cor de fundo original do main */
+    min-height: 85vh;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    align-items: center;
+    gap: 20px;
+    padding: 30px 15px;
 }
 
-.groupcommands {
-     display: flex;
-    flex-direction: row;      
-    flex-wrap: wrap;          
-    justify-content: center;
-    gap: 15px;
-    padding: 20px;
-}
-
-.cardcommand{
- border: 1px solid #ccc;
-    background-color: #f2f2f2;
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+hr {
+    height: 2px;
+    background-color: #f19291; /* Cor de borda/separador original */
+    border: none;
     width: 100%;
+    margin: 15px 0;
 }
 
-@media screen and (min-width: 768px) {
-    .cartaocomando {
-        width: calc(25% - 12px);
+/* Container dos cartões com alinhamento responsivo */
+.groupCommand {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Cartões com a cor original e texto centralizado */
+.cardcommand {
+    width: 100%; /* 1 por linha no celular */
+    background-color: #B1E5E6; /* Cor de fundo original dos cartões */
+    border: 1px solid #89c0c1;
+    border-radius: 16px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    /* Centraliza o ícone */
+    text-align: center;     /* Alinha todo o texto no centro */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+/* Título de cada comando */
+.cardcommand h3 {
+    font-size: 1.1rem;
+    color: #123334; /* Tom escuro do azul/verde para destaque do título */
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+/* Descrição do comando */
+.cardcommand p {
+    font-size: 0.95rem;
+    color: #214344; /* Leitura legível dentro do cartão azul */
+    line-height: 1.4;
+}
+
+/* Efeito ao passar o mouse */
+.cardcommand:hover {
+    cursor: pointer;
+    background-color: #ffffff; /* Transiciona para fundo branco */
+    color: #d67474;
+    transform: translateY(-6px);
+    box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+.cardcommand:hover h3 {
+    color: #d67474;
+}
+
+/* Tamanho e centralização dos ícones */
+.icone {
+    width: 36px;
+    height: 36px;
+    margin-bottom: 12px;
+    display: block;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #666666;
+}
+
+/* ALINHAMENTO RESPONSIVO DE CARTÕES */
+
+/* Tablets (a partir de 600px): 2 cartões por linha */
+@media screen and (min-width: 600px) {
+    .cardcommand {
+        width: calc(50% - 20px);
     }
 }
- 
-@keyframes rolagemPapel {
-    from {
-        background-position: 0 0;
-    }
-    to {
-        background-position: 500px 500px;
+
+/* Desktops (a partir de 1024px): 4 cartões por linha */
+@media screen and (min-width: 1024px) {
+    .cardcommand {
+        width: calc(25% - 20px);
     }
 }
- 
